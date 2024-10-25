@@ -163,7 +163,8 @@ def romantic_writing():
                             "What card do you think they have? (Priest, Baron, Handmaid, Prince, King, Countess, Princess): ")
                         guessed = hands[num]
                         if guess == str(guessed.cards[0]):
-                            print(f"Good choice! {guessed.name} was in possession of {guess}. They have been eliminated.")
+                            print(
+                                f"Good choice! {guessed.name} was in possession of {guess}. They have been eliminated.")
                             hands.remove(guessed)
                             players.remove(targeted)
                             if num < i:
@@ -236,7 +237,8 @@ def romantic_writing():
                         if num < i:
                             i -= 1
                     elif current_card == enemy_card:
-                        print(f"Lukewarm choice. {targeted} had the same card as you: {enemy.cards[0]}. Nothing happens.")
+                        print(
+                            f"Lukewarm choice. {targeted} had the same card as you: {enemy.cards[0]}. Nothing happens.")
                     else:
                         print(f"Terrible choice! {targeted} had a: {enemy.cards[0]}. You have been eliminated.")
                         hands.remove(gamer)
@@ -331,6 +333,9 @@ def romantic_writing():
             print(f"{hands[0].name} has won the game! Congrats!")
             break
         i = (i + 1) % len(players)
+
+        if len(deck.cards) == 0:
+            print("There are no more cards left in the deck")
 
 
 romantic_writing()
